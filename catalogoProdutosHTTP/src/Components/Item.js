@@ -11,9 +11,9 @@ export default class Item extends React.Component {
                 </View>
                 <View style={ boxItem }> 
                     <Text style={{fontWeight:'bold'}}>{this.props.item.titulo}</Text>
-                    <Text>R$ {parseFloat(this.props.item.valor).toFixed(2)}</Text>
-                    <Text>{this.props.item.local_anuncio}</Text>
-                    <Text>{this.props.item.data_publicacao}</Text>
+                    <Text>Preço: R$ {parseFloat(this.props.item.valor).toFixed(2)}</Text>
+                    <Text>Local: {this.props.item.local_anuncio}</Text>
+                    <Text>Data: {this.props.item.data_publicacao}</Text>
                 </View>
             </View>
         );
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor:'#fff',
         justifyContent: 'center',
-        alignItems:'center'
+        alignItems:'flex-start',
+        paddingHorizontal: 10,
     }
 });
