@@ -42,7 +42,7 @@ export default class CenaPrincipal extends Component {
 
 const styles = StyleSheet.create({
     imgLogo:{
-        height:90,
+        height:100,
         width: 300,
     },
     boxMenu:{
