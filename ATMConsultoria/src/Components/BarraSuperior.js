@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text,StatusBar, Image,TouchableHighlight } from 'react-native';
+import { StyleSheet, View, Text,StatusBar, Image,TouchableOpacity } from 'react-native';
 import btnVoltar from '../imgs/btn_voltar.png';
 
 export default class BarraSuperior extends Component {
@@ -8,15 +8,14 @@ export default class BarraSuperior extends Component {
         if(this.props.voltar){
             return (
                 <View style={ [barra,{backgroundColor:this.props.cor}] }>
+                    <StatusBar backgroundColor={this.props.cor} />
                     <View style={ {flex:2} }>
-                    <TouchableHighlight  onPress={() => {
-                            this.props.navigator.pop();
-                        }}>
+                        <TouchableOpacity  onPress={() => this.props.navigator.pop() }>
                             <Image source={btnVoltar}/>
-                        </TouchableHighlight >
+                        </TouchableOpacity >
                     </View>
+
                     <View style={ {flex:8} }>
-                        <StatusBar backgroundColor={this.props.cor} />
                         <Text style={ txtTitulo }>{this.props.empresa}</Text>
                     </View>
                     
@@ -24,16 +23,13 @@ export default class BarraSuperior extends Component {
                     </View>
                 </View>
             );
-        } else {
-            return (
-                <View style={ [barra,{backgroundColor:this.props.cor}] }>
-                    <View style={ {flex:8} }>
-                        <StatusBar backgroundColor={this.props.cor} />
-                        <Text style={ txtTitulo }>{this.props.empresa}</Text>
-                    </View>
-                </View>
-            );
-        }
+        } 
+        return (
+            <View style={ [barra,{backgroundColor:this.props.cor}] }>
+                <StatusBar backgroundColor={this.props.cor} />
+                <Text style={ txtTitulo }>{this.props.empresa}</Text>
+            </View>
+        );
     }
 }
 
